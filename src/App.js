@@ -3,10 +3,9 @@ import './App.css';
 import {Route, Routes} from "react-router-dom";
 import LoginForm from './Components/LoginForm';
 import NewAcct from './Components/NewAcct';
-import DashBoard from './Components/DashBoard';
+import DashBoardEmployee from './Components/DashBoardEmployee';
 import HomePage from './Components/HomePage';
 import ContactUs from './Components/ContactUs';
-
 
 function App() {
   return (
@@ -14,7 +13,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage/>}/>
       <Route path="/ContactUs" element={<ContactUs/>}/>
-      <Route path="/DashBoard" element={<DashBoard/>}/>
+      <Route path="/DashBoardEmployee" element={<DashBoardEmployee/>}/>
       <Route path="/LoginForm" element={<LoginForm/>}/>
       <Route path="/NewAcct" element={<NewAcct/>}/>
     </Routes>
