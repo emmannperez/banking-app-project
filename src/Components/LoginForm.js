@@ -4,12 +4,13 @@ import NavBar from "./NavBar";
   
 function LoginForm() {
   
-  const [email,setEmail]=useState('');
-  const [password,setPassword]=useState('');
-  const navigate=useNavigate();
+const [email,setEmail]=useState('');
+const [password,setPassword]=useState('');
+const [logInUser,setLogInUser]=useState([]);
+const navigate=useNavigate();
   
-  const handleInputChange=(event)=> {
-    const {id,value} = event.target;
+const handleInputChange=(event)=> {
+  const {id,value} = event.target;
     if(id==='email'){
       setEmail(value);
     }
@@ -30,7 +31,15 @@ function LoginForm() {
     alert("Account Does Not Exist!");
   }else {
     alert('Successfully Logged-In');
-    return navigate("/DashBoardEmployee");
+    const userindex=database.findIndex(event => event.email === email);
+      logInUser.push(database[userindex]);
+      setLogInUser(logInUser);
+      localStorage.setItem('logInUser',JSON.stringify(logInUser));
+    if(database[userindex].usertype==='employee'){
+      return navigate("/DashBoardEmployee");
+    } else {
+      return navigate("/DashBoardClient");
+    }
   }
   }
   
@@ -40,11 +49,6 @@ function LoginForm() {
     <form> 
       <div><label>Email </label><input type="email" id="email" value={email} onChange={(event)=>handleInputChange(event)} required /></div>
       <div><label>Password </label><input type="password" id="password" value={password} onChange={(event)=>handleInputChange(event)} required /></div>
-      <div>
-        <div>User Type:</div>
-        <label><input type="radio" id="employee" /*onClick={handleUserType}*/ value='employee' required/>I'm an Employee</label>
-        <label><input type="radio" id="client" /*onClick={handleUserType}*/ value='client' required/>I'm a Client</label>
-      </div>
       <div><input type="submit" disabled={!email || !password} onClick={handleSubmit} value='Log In' /></div>
     </form>
     </div>
