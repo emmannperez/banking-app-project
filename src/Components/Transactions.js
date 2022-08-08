@@ -1,13 +1,18 @@
 import React from "react";
-import NavBarEmployee from "./NavBarEmployee";
+import {Link} from "react-router-dom";
 
-function Transactions (){
-    return (
-        <div>
-        <NavBarEmployee/>
-        <div>Welcome to my Transactions!</div>
-        </div>
-    );
-}
+const Transaction = () =>{
 
-export default Transactions;
+  return (
+    <div className='container'>
+    <div className='navBar'>
+        <li className='navComp'><Link to="/DashBoardEmployee" className= 'navComp'><span className='logoGoldM'>MAIN</span></Link></li>
+        <li className='navComp'><Link to="/Deposit" className='navCompLink'>Deposit</Link></li>
+        <li className='navComp'><Link to="/Withdraw" className='navCompLink'>Withdraw</Link></li>
+        <li className='navComp'><Link to="/Transfer" className='navCompLink'>Transfer</Link></li>
+    </div>
+    </div>
+  );
+};
+
+export default Transaction;
