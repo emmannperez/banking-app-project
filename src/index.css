@@ -1,1 +1,614 @@
+*{
+  margin: 0;
+  padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
 
+@font-face {
+  font-family: bangkok;
+  src: url(bangkok-bold.ttf);
+}
+
+html{
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.navBar{
+  width: 100%;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+  height: 50px;
+  position: relative;
+  border: 2pt solid black;
+  border-radius: 10px;
+  background-color: beige;
+}
+
+.container {
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Navigatin Bar */
+
+.navComp{
+  display: flex; 
+  list-style: none;
+  flex-direction: center ;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navCompLink{
+  text-decoration: none;
+  color: black;
+  font-size: 18pt;
+  padding: 6px;
+}
+
+.navComp{
+  text-decoration: none;
+  color: black;
+  font-size: 18pt;
+  padding: 6px;
+}
+
+.navCompLink:hover {
+  color: rgb(253, 201, 121);
+  transition: 0.3s;
+  background-color: black;
+  border-radius: 5px;
+}
+
+/* Headers and Logo Style */
+
+.logoGoldL {
+  color: rgb(253, 201, 121);
+  font-family: bangkok;
+  text-decoration: none;
+  font-size: 100px;
+}
+
+.logoBlackL {
+  color: black;
+  font-family: bangkok;
+  text-decoration: none;
+  font-size: 100px;
+}
+
+.logoGoldM {
+  color: rgb(253, 201, 121);
+  font-family: bangkok;
+  text-decoration: none;
+  font-size: 60px;
+}
+
+.logoBlackM {
+  color: black;
+  font-family: bangkok;
+  text-decoration: none;
+  font-size: 60px;
+}
+
+/* Home Page */
+
+.homeBody{
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+#homePageVector{
+  height: 600px;
+}
+
+.homeLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 50px;
+}
+
+.homeText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14pt;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.homepage-container {
+  display: grid;
+  grid-template-columns: 50%;
+  grid-template-rows: 100%;
+}
+
+#handLogo{
+  height: 100px;
+  margin-bottom: 30px ;
+  margin-left: -5px;
+  z-index: -1;
+}
+
+#homeImgCont{
+  width: 50%;
+}
+
+.homeBody {
+  display: flex;
+  flex-direction: row;
+}
+
+.homeLeft {
+  width: 50%;
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 20px;
+  padding-top:50px;
+  padding-bottom: 60px;
+  border-radius: 10px;
+}
+
+.homeRight {
+  width: 50%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+@media screen and (max-width: 1100px) {
+#homeImgCont {
+      display: flex;
+      justify-content: center;
+  }
+.homeText{
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+  }
+}
+
+/* Contact Us */
+
+.contactUs-container{
+  display: flex;
+  justify-content: center;
+}
+
+#CUimg {
+  max-width: 100%;
+  height: 600px;
+}
+
+.contactUsRight {
+  text-align: left;
+  margin-top: 20px;
+  padding: 25px 25px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: beige;
+  height: 500px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.contactUsRight div,input, button {
+  padding: 1px;
+  border-radius: 5px;
+}
+
+#contactUsName, #contactUsEmail, #contactUsMsg{
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 12pt;
+}
+
+#contactUsName, #contactUsEmail{
+  height: 30px;
+}
+
+.contactUslabel {
+ font-weight: bold;
+}
+
+.contactUssubmit {
+  height: 40px;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgb(255, 207, 134);
+  border-radius: 5px;
+}
+
+.contactUssubmit:hover {
+  color: rgb(253, 201, 121);
+  background-color: black;
+  transition: 0.3s;
+}
+
+/*Sign up*/
+#NAimg {
+  max-width: 100%;
+  height: 600px;
+}
+
+.regForm-container{
+  display: flex;
+  justify-content: center;
+}
+
+.NewAcctRight {
+  padding-top: 90px;
+  width: 400px;
+  height: 500px;
+}
+
+.NewAcctRight-container {
+  border: 1px solid black;
+  background-color: beige;
+  padding: 20px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  border-radius: 10px;
+}
+
+.NewAcctLabel {
+  font-weight: bold;
+  padding: 1px;
+ }
+
+#firstName, #lastName, #email, #password,
+ #depositAmount, #withdrawalAmount, #firstNameW, #firstNameD, #lastNameW, #lastNameD, #transferAmount, #balance {
+  padding: 1px;
+  height: 30px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 12pt;
+}
+
+.radio-container {
+  display: grid;
+  grid-template-columns: 200px 200px;
+  font-size: 18px;
+}
+
+.radio-container span {
+  color: black;
+  font-family: bangkok;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.NewAcctBtn-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+#NewAcctBtn {
+  padding: 1px;
+  height: 35px;
+  width: 70%;
+  font-size: 18px;
+  font-weight: bold;
+  font-weight: bold;
+  background-color: rgb(255, 207, 134);
+  border-radius: 5px;
+}
+
+#NewAcctBtn:disabled {
+  background-color: beige;
+}
+
+#NewAcctBtn:hover {
+  color: rgb(253, 201, 121);
+  background-color: black;
+  transition: 0.3s;
+}
+
+/*Sign-in*/
+#LIimg {
+  max-width: 100%;
+  height: 600px;
+}
+
+.renderForm-container{
+  display: flex;
+  justify-content: center;
+}
+
+.LogInLabel {
+  font-weight: bold;
+  padding: 1px;
+ }
+
+ .LogInLeft-container {
+  border: 1px solid black;
+  background-color: beige;
+  padding: 20px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  border-radius: 10px;
+}
+
+.LogInLeft {
+  padding-top: 180px;
+  width: 400px;
+  height: 500px;
+}
+
+.LogInBtn-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+#LogIntBtn {
+  padding: 1px;
+  height: 35px;
+  width: 70%;
+  font-size: 18px;
+  font-weight: bold;
+  font-weight: bold;
+  background-color: rgb(255, 207, 134);
+  border-radius: 5px;
+}
+
+#LogInBtn {
+  padding: 1px;
+  height: 35px;
+  width: 70%;
+  font-size: 18px;
+  font-weight: bold;
+  font-weight: bold;
+  background-color: rgb(255, 207, 134);
+  border-radius: 5px;
+}
+
+#LogInBtn:disabled {
+  background-color: beige;
+}
+
+#LogInBtn:hover {
+  color: rgb(253, 201, 121);
+  background-color: black;
+  transition: 0.3s;
+}
+
+/*DashBoard-Employee*/
+.DBElogoGold{
+  color: rgb(253, 201, 121); 
+  font-family: bangkok;
+  text-decoration: none;
+  font-size: 65px;
+}
+
+.DBElogoBlack{
+  color: black;
+  font-family: bangkok;
+  font-size: 65px;
+  text-decoration: none;
+}
+
+.DBE-container {
+  display: grid;
+  grid-template-columns: 115px 960px 350px;
+}
+
+.midDBE-container {
+  padding-left: 15px;
+}
+
+.greeting-container {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.welcometo {
+  font-size: 46pt;
+  padding-left: 15px;
+}
+
+.DateTime-container {
+  font-size: 28pt;
+  padding-top: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.DateTimevalue {
+  font-weight: bold;
+}
+
+.DBEicon {
+  max-width: 70px;
+  max-height: 70px;
+  padding: 10px ;
+  float: left;
+}
+
+.title {
+  color: rgb(243, 167, 53);
+  font-family: Bangkok;
+  font-weight: bold;
+  font-size: 28pt;
+  text-decoration: underline black;
+  padding-bottom: 10px;
+}
+.subtitle {
+  font-weight: bold;
+  font-size: 18pt;
+}
+
+.product-container, .service-container {
+  padding: 7px;
+}
+
+.description {
+  font-size: 14pt;
+  text-align: justify;
+}
+
+.ps {
+  padding: 3px;
+}
+
+.productsandservices {
+  display: flex;
+  flex-direction: row;
+}
+
+.desc-container {
+  display: grid;
+  grid-template-rows: auto auto auto;
+}
+
+.rightDBE-container {
+  border-left: 1pt solid black;
+  background-color: beige;
+}
+
+.Profile-Info {
+padding-top: 10px;
+padding-left: 10px;
+}
+
+.profilename {
+  color: rgb(243, 167, 53);
+  font-weight: bold;
+  font-size: 32pt;
+  padding-left: 10px;
+}
+
+.profile-desc, .profile-geninfo {
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+.profile-geninfo-container {
+  padding-left: 10px;
+  display: grid;
+  grid-template-columns: 90px 200px;
+  padding-bottom: 20px;
+}
+/*To-do list*/
+.todoList-container {
+  border: 1pt solid black;
+  background-color: white;
+  box-shadow: 3px 7px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  width: 300px;
+  height: 400px;
+}
+
+.todoList-container p {
+  font-size: 25pt;
+  text-decoration: underline black;
+  color: rgb(243, 167, 53);
+  padding: 10px;
+  font-weight: bold;
+  font-family: Bangkok;
+}
+
+#todo-title {
+  display: flex;
+  justify-content: center; 
+}
+
+.td-container {
+  padding-left: 22px;
+}
+
+#todo-input {
+  height: 25px;
+  width: 75%;
+}
+
+.todo-input-container {
+  display: flex;
+  justify-content: center;
+}
+
+.todo-btn {
+  width: 25px;
+  font-size: 10pt;
+  font-weight: bold;
+  height: 30px;
+}
+
+.todo-btn:hover {
+  color: rgb(253, 201, 121);
+  background-color: black;
+  transition: 0.3s;
+}
+
+.todobtn-container {
+  padding-left: 3px;
+}
+
+/*Transactions*/
+
+.DepositLeft, .WithdrawLeft {
+  padding-top: 155px;
+  width: 400px;
+  height: 500px;
+}
+
+.TransferLeft {
+  padding-top: 50px;
+  width: 400px;
+  height: 500px;
+}
+
+/*New Client*/
+.AddClientRight{
+  width: 550px;
+  height: 370px;
+  border: 1px solid black;
+  background-color: beige;
+  padding: 20px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  border-radius: 10px;
+}
+.AddClientRight-container {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.logoGoldS {
+  color: rgb(253, 201, 121);
+  font-family: bangkok;
+  text-decoration: none;
+  font-size: 52px;
+}
+
+.logoBlackS {
+  color: black;
+  font-family: bangkok;
+  text-decoration: none;
+  font-size: 52px;
+}
+
+.DT-container {
+  font-size: 36pt;
+  padding-top: 60px;
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
