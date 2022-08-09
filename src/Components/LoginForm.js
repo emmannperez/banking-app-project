@@ -22,6 +22,7 @@ const handleInputChange=(event)=> {
   
   const handleSubmit=(event)=> {
   const database=JSON.parse(localStorage.getItem('accountList'));
+  const clientList=JSON.parse(localStorage.getItem('clientList'));
   event.preventDefault();
   
   const userlogin=database.find(id =>
@@ -33,12 +34,16 @@ const handleInputChange=(event)=> {
   }else {
     alert('Successfully Logged-In');
     const userindex=database.findIndex(event => event.email === email);
+    const clientindex=clientList.findIndex(event => event.email === email);
+    if(database[userindex].usertype==='employee'){
       logInUser.push(database[userindex]);
       setLogInUser(logInUser);
       localStorage.setItem('logInUser',JSON.stringify(logInUser));
-    if(database[userindex].usertype==='employee'){
       return navigate("/DashBoardEmployee");
     } else {
+      logInUser.push(clientList[clientindex]);
+      setLogInUser(logInUser);
+      localStorage.setItem('logInUser',JSON.stringify(logInUser));
       return navigate("/DashBoardClient");
     }
   }

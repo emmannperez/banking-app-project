@@ -1,0 +1,8 @@
+.DBE-container {
+    display: grid;
+    grid-template-columns: 115px auto auto;
+}
+
+#welcometo {
+    font-size: 36pt;
+}

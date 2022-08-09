@@ -1,0 +1,70 @@
+h3 {
+
+    font-size: 42pt;
+}
+
+.MA-page-container {
+    display: flex;
+}
+
+.MA-body-container {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.MA-table-container {
+    width: 886px;
+}
+
+.MA-table-headers th{
+    font-size: 28px;
+    text-align: left;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: beige;
+    color: black;
+}
+
+.MA-table-data {
+    font-size: 22px;
+
+}
+
+.MA-table-container th, .MA-table-container td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.MA-table-container tr:hover {
+    background-color: #ddd;
+}
+
+#welcometo {
+    font-size: 36pt;
+}
+
+ .AddClientBtn{
+    font-size: 20px;
+    border-style: none;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.AddClientBtn:hover{
+    color: white;
+    background-color: black;
+}
+
+.MA-table-container tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/*.AddClientForm-container {
+    display: flex;
+    align-items: center;
+}
+
+.AddClientForm{
+    padding: 100px;
+} */

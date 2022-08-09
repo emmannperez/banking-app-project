@@ -6,6 +6,15 @@ import NewAcct from './Components/NewAcct';
 import DashBoardEmployee from './Components/DashBoardEmployee';
 import HomePage from './Components/HomePage';
 import ContactUs from './Components/ContactUs';
+import ManageAcct from './Components/ManageAcct';
+import Transactions from './Components/Transactions';
+import DashBoardClient from './Components/DashBoardClient';
+import AddClient from './Components/AddClient';
+import Withdraw from './Components/Withdraw';
+import Deposit from './Components/Deposit';
+import Transfer from './Components/Transfer';
+import ExpenseForm from './Components/ExpenseForm';
+import Stash from './Components/Stash';
 
 function App() {
   return (
@@ -13,9 +22,18 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage/>}/>
       <Route path="/ContactUs" element={<ContactUs/>}/>
-      <Route path="/DashBoardEmployee" element={<DashBoardEmployee/>}/>
       <Route path="/LoginForm" element={<LoginForm/>}/>
       <Route path="/NewAcct" element={<NewAcct/>}/>
+      <Route path="/DashBoardEmployee" element={<DashBoardEmployee/>}/>
+      <Route path="/ManageAcct" element={<ManageAcct/>}/>
+      <Route path="/Transactions" element={<Transactions/>}/>
+      <Route path="/DashBoardClient" element={<DashBoardClient/>}/>
+      <Route path="/AddClient" element={<AddClient/>}/>
+      <Route path="/Withdraw" element={<Withdraw/>}/>
+      <Route path="/Deposit" element={<Deposit/>}/>
+      <Route path="/Transfer" element={<Transfer/>}/>
+      <Route path="/ExpenseForm" element={<ExpenseForm/>}/>
+      <Route path="/Stash" element={<Stash/>}/>
     </Routes>
     </div>
   );
