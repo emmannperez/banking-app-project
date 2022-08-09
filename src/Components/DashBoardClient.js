@@ -1,10 +1,10 @@
 import React from "react";
-import NavBarEmployee from "./NavBarEmployee";
+import NavBarClient from "./NavBarClient";
 
 function DashBoardClient () {
     return (
     <div>
-        <NavBarEmployee/>
+        <NavBarClient/>
         <div>Welcome to my Profile (Client)!</div>
     </div>
     );
