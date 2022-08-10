@@ -14,7 +14,9 @@ import Withdraw from './Components/Withdraw';
 import Deposit from './Components/Deposit';
 import Transfer from './Components/Transfer';
 import ExpenseForm from './Components/ExpenseForm';
-import Stash from './Components/Stash';
+import IncomeForm from './Components/IncomeForm';
+import Tracker from './Components/Tracker';
+import TransactHistory from './Components/TransactHistory';
 
 function App() {
   return (
@@ -32,8 +34,10 @@ function App() {
       <Route path="/Withdraw" element={<Withdraw/>}/>
       <Route path="/Deposit" element={<Deposit/>}/>
       <Route path="/Transfer" element={<Transfer/>}/>
+      <Route path="/Tracker" element={<Tracker/>}/>
       <Route path="/ExpenseForm" element={<ExpenseForm/>}/>
-      <Route path="/Stash" element={<Stash/>}/>
+      <Route path="/IncomeForm" element={<IncomeForm/>}/>
+      <Route path="/TransactHistory" element={<TransactHistory/>}/>
     </Routes>
     </div>
   );
