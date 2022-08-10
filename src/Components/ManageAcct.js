@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import NavBarEmployee from "./NavBarEmployee";
 import { useNavigate } from "react-router-dom";
 import './ManageAcct.css';
