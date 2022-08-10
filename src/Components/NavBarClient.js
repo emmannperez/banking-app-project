@@ -25,7 +25,7 @@ function NavBarClient () {
             <div></div>
             <li><Link to="/DashBoardClient"><img className="NBEicon" src={HomeIcon} id='HIimg' alt='Menu Icon'/></Link></li>
             <li><Link to="/ExpenseForm"><img className="NBEicon" src={WalletIcon} id='MAIimg' alt='Menu Icon'/></Link></li>
-            <li><Link to="/Stash"><img className="NBEicon" src={MoneyStashIcon} id='TIimg' alt='Menu Icon'/></Link></li>
+            <li><Link to="/TransactHistory"><img className="NBEicon" src={MoneyStashIcon} id='TIimg' alt='Menu Icon'/></Link></li>
             <li><Link to="/Documents"><img className="NBEicon" src={DocumentsIcon} id='DIimg' alt='Menu Icon'/></Link></li>
             <li><a type="submit" onClick={handleSubmit}><img className="NBEicon" src={LogOutIcon} id='LOIImg' alt='Menu Icon'/></a></li>
             <div></div>
