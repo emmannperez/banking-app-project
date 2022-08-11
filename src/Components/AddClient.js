@@ -12,6 +12,25 @@ function AddClient (){
     const [password,setPassword]=useState('');
     const [balance, setbalance]=useState('');
 
+    useEffect(() => {
+        if(balance < 0 || isNaN(balance)){
+        console.log('call useEffect');
+        document.getElementById("invalidAmount").classList.remove('hidden');
+        }else{
+            document.getElementById("invalidAmount").classList.add('hidden');
+        }
+
+    });
+
+    const closeModal = () => {
+        document.getElementById("existErrorModal").classList.add('hidden');
+    }
+
+    const closeModalS = () => {
+        document.getElementById("addAccountSuccessModal").classList.add('hidden');
+        return navigate("/ManageAcct");
+    }
+
     const handleInputChange=(event)=> {
         const {id, value} = event.target;
         if(id==="firstName"){
@@ -48,13 +67,13 @@ function AddClient (){
           };
           
         const userlogin=accountList.find(id =>
-          id.email===email || id.password===password
+          id.email===email
         );
 
         const balanceInt=parseInt(balance);
 
-        if(userlogin===undefined && balanceInt>=0){
-          alert("Successfully Created an Account!");
+        if(userlogin===undefined){
+          // alert("Successfully Created an Account!");
           acctData.balance=balance;
           clientList.push(acctData);
           localStorage.setItem('clientList',JSON.stringify(clientList));
@@ -63,12 +82,14 @@ function AddClient (){
           localStorage.setItem('accountList',JSON.stringify(accountList));
           setAccountList(accountList);
           setSuccessNewAcct(true);
-          return navigate("/ManageAcct");
+          document.getElementById("addClientSuccessModal").classList.remove('hidden');
+          // return navigate("/ManageAcct");
         } else {
           if (balanceInt<0) {
             alert('Invalid Initial Balance');
           } else {
-            alert('Account Already Exists');
+            // alert('Account Already Exists');
+            document.getElementById("existErrorModal").classList.remove('hidden');
           }
         }
     }
@@ -96,7 +117,8 @@ function AddClient (){
               <div><label className='NewAcctLabel'>E-MAIL </label><br/><input id='email' value={email} onChange={(event)=>handleInputChange(event)} type='email' placeholder='Enter your email'/></div>
               <div><label className='NewAcctLabel'>PASSWORD </label><br/><input id='password' value={password} onChange={(event)=>handleInputChange(event)} type='password' placeholder='Enter your password'/></div>
               <div><label className='NewAcctLabel'>INITIAL BALANCE </label><input id='balance' value={balance} onChange={(event)=>handleInputChange(event)} type='number' placeholder='Enter your initial balance'/></div>
-              <div className='NewAcctBtn-container'><input id='NewAcctBtn' disabled={!firstName || !lastName || !balance} type="submit" value='Create' onClick={()=>handleSubmitEvent()}/></div>
+              <div id="invalidAmount" class="redError hidden"><p>Invalid Amount. Value should be positive.</p></div>
+              <div className='NewAcctBtn-container'><input id='NewAcctBtn' disabled={!firstName || !lastName || !balance || balance<0} type="submit" value='Create' onClick={()=>handleSubmitEvent()}/></div>
             </div>
             </div>       
         </div>
@@ -109,7 +131,21 @@ function AddClient (){
     return (
         <div className="AddClientForm-container">
             {regForm}
+        
+        <div id="existErrorModal" class="modal hidden">
+          <div class="modal-content">
+          <span class="close" onClick={closeModal}>&times;</span>
+          <p>Account already exists!</p>
+          </div>
         </div>
+
+        <div id="addClientSuccessModal" class="modal hidden">
+          <div class="modal-content">
+          <span class="close" onClick={closeModalS}>&times;</span>
+          <p>Account successfully created!</p>
+          </div>
+        </div>
+        </div>  
     );
 }
 export default AddClient
