@@ -9,6 +9,15 @@ const [email,setEmail]=useState('');
 const [password,setPassword]=useState('');
 const [logInUser,setLogInUser]=useState([]);
 const navigate=useNavigate();
+
+const closeModal = () => {
+  document.getElementById("existErrorModal").classList.add('hidden');
+}
+
+const closeModalS = () => {
+  document.getElementById("loginSuccessModal").classList.add('hidden');
+  // return navigate("/ManageAcct");
+}
   
 const handleInputChange=(event)=> {
   const {id,value} = event.target;
@@ -30,9 +39,11 @@ const handleInputChange=(event)=> {
   );
 
   if(userlogin===undefined){
-    alert("Account Does Not Exist!");
+    // alert("Account Does Not Exist!");
+    document.getElementById("existErrorModal").classList.remove('hidden');
   }else {
     alert('Successfully Logged-In');
+    // document.getElementById("loginSuccessModal").classList.remove('hidden');
     const userindex=database.findIndex(event => event.email === email);
     const clientindex=clientList.findIndex(event => event.email === email);
     if(database[userindex].usertype==='employee'){
@@ -71,6 +82,20 @@ const handleInputChange=(event)=> {
     <NavBar />
     <div className="LoginForm">
         {renderForm}
+    </div>
+
+    <div id="loginSuccessModal" class="modal hidden">
+          <div class="modal-content">
+          <span class="close" onClick={closeModalS}>&times;</span>
+          <p>You have successfully logged in!</p>
+          </div>
+    </div>
+  
+    <div id="existErrorModal" class="modal hidden">
+          <div class="modal-content">
+          <span class="close" onClick={closeModal}>&times;</span>
+          <p>Account does not exists!</p>
+          </div>
     </div>
   </div>
   );
