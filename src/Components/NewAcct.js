@@ -100,7 +100,7 @@ const regForm = (
   </div>
   <div className='NewAcctRight'>
     <div className='NewAcctRight-container'>
-    <div><span className='logoBlackM'>SIGN </span><span className='logoGoldM'>UP</span></div>
+    <div><span className='header'>Sign Up</span></div>
       <div><label className='NewAcctLabel'>FIRST NAME </label><br/><input id='firstName' value={firstName} onChange={(event)=>handleInputChange(event)} type='text' placeholder='Enter your first name' /></div>
       <div><label className='NewAcctLabel'>LAST NAME </label><br/><input id='lastName' value={lastName} onChange={(event)=>handleInputChange(event)} type='text' placeholder='Enter your last name' /></div>
       <div><label className='NewAcctLabel'>E-MAIL: </label><br/><input id='email' value={email} onChange={(event)=>handleInputChange(event)} type='email' placeholder='Enter your email'/></div>
