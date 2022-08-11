@@ -119,14 +119,14 @@ const regForm = (
 
     <div id="addSuccessModal" class="modal hidden">
           <div class="modal-content">
-          <span class="close" onClick={closeModal}>&times;</span>
+          <span class="close" onClick={closeModalS}>&times;</span>
           <p>Account is Successfully created!</p>
           </div>
     </div>
   
     <div id="existErrorModal" class="modal hidden">
           <div class="modal-content">
-          <span class="close" onClick={closeModalS}>&times;</span>
+          <span class="close" onClick={closeModal}>&times;</span>
           <p>Account already exists!</p>
           </div>
     </div>
