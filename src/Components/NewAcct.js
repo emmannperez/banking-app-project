@@ -11,6 +11,11 @@ const [email,setEmail]=useState('');
 const [password,setPassword]=useState('');
 const [usertype,setUserType]=useState('');
 
+const closeModal = () => {
+  document.getElementById("existErrorModal").classList.add('hidden');
+  document.getElementById("addSuccessModal").classList.add('hidden');
+}
+
 const handleInputChange=(event)=> {
   const {id,name,value} = event.target;
   if(id==="firstName"){
@@ -59,7 +64,8 @@ const userlogin=accountList.find(id =>
 );
 
 if(userlogin===undefined){
-  alert("Successfully Created an Account!");
+  // alert("Successfully Created an Account!");
+  document.getElementById("addSuccessModal").classList.remove('hidden');
   setAccountList(accountList.push(acctData));
   localStorage.setItem('accountList',JSON.stringify(accountList));
   setAccountList(accountList);
@@ -67,7 +73,8 @@ if(userlogin===undefined){
 
   return navigate("/LogInForm");
 }else {
-  alert('Account Already Exists');
+  // alert('Account Already Exists');
+  document.getElementById("existErrorModal").classList.remove('hidden');
 }
 
 }
@@ -106,6 +113,20 @@ const regForm = (
     <div className='NewAcctBtn-container'><input id='NewAcctBtn' disabled={!firstName || !lastName || !email || !password} type="submit" value='Create an Account' onClick={()=>handleSubmitEvent()}/></div>
   </div>
   </div>
+
+    <div id="addSuccessModal" class="modal hidden">
+          <div class="modal-content">
+          <span class="close" onClick={closeModal}>&times;</span>
+          <p>Account is Successfully created!</p>
+          </div>
+    </div>
+  
+    <div id="existErrorModal" class="modal hidden">
+          <div class="modal-content">
+          <span class="close" onClick={closeModal}>&times;</span>
+          <p>Account already exists!</p>
+          </div>
+    </div>
 </div>
 </div>
 )
