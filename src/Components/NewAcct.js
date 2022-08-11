@@ -13,6 +13,9 @@ const [usertype,setUserType]=useState('');
 
 const closeModal = () => {
   document.getElementById("existErrorModal").classList.add('hidden');
+}
+
+const closeModalS = () => {
   document.getElementById("addSuccessModal").classList.add('hidden');
 }
 
@@ -123,7 +126,7 @@ const regForm = (
   
     <div id="existErrorModal" class="modal hidden">
           <div class="modal-content">
-          <span class="close" onClick={closeModal}>&times;</span>
+          <span class="close" onClick={closeModalS}>&times;</span>
           <p>Account already exists!</p>
           </div>
     </div>
