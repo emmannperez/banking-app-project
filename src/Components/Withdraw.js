@@ -23,8 +23,12 @@ function Withdraw (){
 
     const closeModal = () => {
         document.getElementById("existErrorModal").classList.add('hidden');
-        document.getElementById("withdrawSuccessModal").classList.add('hidden');
         document.getElementById("invalidAmountModal").classList.add('hidden');
+    }
+
+    const closeModalS = () => {
+        document.getElementById("withdrawSuccessModal").classList.add('hidden');
+        return navigate("/ManageAcct");
     }
 
     const handleInputChange=(event)=> {
@@ -48,7 +52,7 @@ function Withdraw (){
         };
         console.log(clientData);
         const userindexFW=clientList.findIndex(event => event.firstname === firstName);
-        const currentbalance= parseInt(clientList[userindexFW].balance);
+        const currentbalance= parseInt(clientList[userindexFW].balance)
         if(withdrawalAmount<0 || currentbalance<=withdrawalAmount){
             // alert('Invalid Amount');
             document.getElementById("invalidAmountModal").classList.remove('hidden');
@@ -68,9 +72,9 @@ function Withdraw (){
                 return navigate("/Withdraw");
             } else{
                 localStorage.setItem('clientList',JSON.stringify(newClientList));
-                alert("Withdraw Successful!")
-                // document.getElementById("withdrawSuccessModal").classList.remove('hidden');
-                return navigate("/ManageAcct");
+                // alert("Withdraw Successful!")
+                document.getElementById("withdrawSuccessModal").classList.remove('hidden');
+                // return navigate("/ManageAcct");
             }
 
             
@@ -85,7 +89,7 @@ function Withdraw (){
             <div><label className='NewAcctLabel'>First Name: </label><input id='firstName' value={firstName} onChange={(event)=>handleInputChange(event)} type='text' placeholder='Enter your first name' /></div>
             <div><label className='NewAcctLabel'>Last Name: </label><input id='lastName' value={lastName} onChange={(event)=>handleInputChange(event)} type='text' placeholder='Enter your last name' /></div>
             <div><label className='NewAcctLabel'>Amount: </label><input id='withdrawalAmount' value={withdrawalAmount} onChange={(event)=>handleInputChange(event)} type='number' placeholder='Enter your withdrawal amount'/></div>
-            <div id="invalidAmount" class="hidden"><p>Invalid Amount. Value should be positive.</p></div>
+            <div id="invalidAmount" class="redError hidden"><p>Invalid Amount. Value should be positive.</p></div>
             <div className='NewAcctBtn-container'><input id='NewAcctBtn' disabled={!firstName || !lastName || !withdrawalAmount || withdrawalAmount<0} type="submit" value='Withdraw' onClick={()=>handleSubmitEvent()}/></div>
             </div>
             
@@ -115,12 +119,12 @@ function Withdraw (){
           </div>
         </div>
 
-        {/* <div id="withdrawSuccessModal" class="modal hidden">
+        <div id="withdrawSuccessModal" class="modal hidden">
           <div class="modal-content">
-          <span class="close" onClick={navigate("/ManageAcct")}></span>
+          <span class="close" onClick={closeModalS}>&times;</span>
           <p>Withdraw Successful!</p>
           </div>
-        </div> */}
+        </div>
         </div>
     );
 }
