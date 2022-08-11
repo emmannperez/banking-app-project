@@ -1,13 +1,21 @@
 *{
   margin: 0;
   padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
+  font-family: 'Rubik', sans-serif;
+}
+
+.header{
+  font-size: 50px;
+  font-weight: bold;
+}
 
 @font-face {
   font-family: bangkok;
   src: url(bangkok-bold.ttf);
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+
 
 html{
   max-width: 100%;
@@ -16,7 +24,8 @@ html{
 
 .navBar{
   width: 100%;
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+  font-family: 'Rubik', sans-serif;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -24,15 +33,16 @@ html{
   text-decoration: none;
   height: 50px;
   position: relative;
-  border: 2pt solid black;
-  border-radius: 10px;
-  background-color: beige;
+  /* border: 2pt solid black; */
+  /* border-radius: 10px; */
+  /* background-color: beige; */
 }
 
 .container {
   padding-top: 30px;
   padding-left: 10px;
   padding-right: 10px;
+  /* box-shadow: 0px 3px rgba(0, 0, 0, 0.10); */
 }
 
 /* Navigatin Bar */
@@ -60,11 +70,23 @@ html{
   padding: 6px;
 }
 
+.navComp:hover {
+  color: rgb(253, 201, 121);
+  transition: 0.3s;
+  background-color: white;
+  border-radius: 30px;
+  /* border: 2px;
+  border-color: rgb(253, 201, 121);
+  border-style: solid; */
+}
+
 .navCompLink:hover {
   color: rgb(253, 201, 121);
   transition: 0.3s;
-  background-color: black;
-  border-radius: 5px;
+  background-color: white;
+  /* border: 2px;
+  border-color: rgb(253, 201, 121);
+  border-style: solid; */
 }
 
 /* Headers and Logo Style */
@@ -126,6 +148,7 @@ html{
   text-align: center;
   padding-left: 10px;
   padding-right: 10px;
+  font-family: 'Rubik', sans-serif;
 }
 
 .homepage-container {
@@ -171,8 +194,17 @@ footer {
 }
 
 @media screen and (max-width: 1100px) {
+.homeBody{
+  margin-top: 200px;
+  flex-direction: column;
+}
+
+.homeLeft{
+  width: 80%;
+}
+
 #homeImgCont {
-      display: flex;
+
       justify-content: center;
   }
 .homeText{
@@ -253,17 +285,18 @@ footer {
 }
 
 .NewAcctRight {
-  padding-top: 90px;
+  padding-top: 0px;
   width: 400px;
-  height: 500px;
+  height: 100%;
 }
 
 .NewAcctRight-container {
-  border: 1px solid black;
-  background-color: beige;
-  padding: 20px;
+  /* border: 1px solid black; */
+  /* background-color: beige; */
+  padding: 30px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
   border-radius: 10px;
+  height: 100%;
 }
 
 .NewAcctLabel {
@@ -273,12 +306,16 @@ footer {
 
 #firstName, #lastName, #email, #password,
  #depositAmount, #withdrawalAmount, #firstNameW, #firstNameD, #lastNameW, #lastNameD, #transferAmount, #balance {
-  padding: 1px;
+  padding-top: 1px;
+  padding-bottom: 7px;
   height: 30px;
   width: 100%;
-  border-radius: 5px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  border-style: none;
+  border-bottom-style: solid;
+  border-bottom: 3px black;
   font-size: 12pt;
+  background-color: rgba(0,0,0,0);
 }
 
 .radio-container {
@@ -298,25 +335,27 @@ footer {
   display: flex;
   justify-content: center;
   padding-top: 10px;
+  align-items: center;
+  width: 100%;
 }
 
 #NewAcctBtn {
-  padding: 1px;
-  height: 35px;
-  width: 70%;
+  padding: 5px;
+  height: 55px;
+  width: 100%;
   font-size: 18px;
   font-weight: bold;
   font-weight: bold;
-  background-color: rgb(255, 207, 134);
+  /* background-color: rgb(255, 207, 134); */
   border-radius: 5px;
 }
 
 #NewAcctBtn:disabled {
-  background-color: beige;
+  /* background-color: beige; */
 }
 
 #NewAcctBtn:hover {
-  color: rgb(253, 201, 121);
+  color: white;
   background-color: black;
   transition: 0.3s;
 }
